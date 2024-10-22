@@ -30,6 +30,7 @@ Created a virtual machine using Oracle VM VirtualBox <br/>
 
 <br />
 <br />
+
 Partitioned the drive and installed CentOS  <br/>
  
   ![image](https://github.com/user-attachments/assets/9e5691b9-6a8c-4ad6-83cf-2b22295e99a6)
