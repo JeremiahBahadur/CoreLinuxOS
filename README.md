@@ -37,25 +37,34 @@ Partitioned the drive and installed CentOS  <br/>
 
 <br />
 <br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+In Linux operating systems, the /etc/passwd file is a text-based database of information about users who may log into the system or other operating system identities that own running processes. The /etc/passwd file is a text file with one record per line, each describing a user account. Each record consists of seven fields separated by colons. An example record may be:
+
+ 
+
+jsmith:x:1001:1000:Joe Smith,Room 1007,(234)555-8910,(234)555-0044,email:/home/jsmith:/bin/sh
+
+ 
+
+The ordering of the records within the file is generally unimportant, but in this example, the second field stores information used to validate a user’s password. Rather than using the actual password in a location that is so widely known, best practice usually sets this field to “x” (or some other indicator) as shown in this example. The actual password information is stored in a separate shadow password file. A common practice for deactivating an account to prevent it being used is to set the field to an asterisk (*).
+
+<br />
+
+Configured networking in the vi Editor with the elevated privileges of the sudo command<br/>
+
+   ![image](https://github.com/user-attachments/assets/ce10b311-28c3-41fe-93cf-74fa1acc03fb)
 <br />
 <br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Used the sestatus command to verify that SELinux (Security Enhanced Linux) is enabled and the current mode is enforcing.
+
+Security Enhanced Linux is a mandatory access control system designed to help a Linux system adhere to the principle of least privilege.
 <br />
 <br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Used the iptables -L command to ensure that the iptables firewall was running and the ntpd -q command to set the Network Time Protocol (NTP) <br/>
+
+![image](https://github.com/user-attachments/assets/e7fc7fac-93e1-48af-a551-b7f195e7c106)
+
 <br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+System time must be synchronized with other network servers and/or an atomic-time server on the Internet for consistent operations and valid chronology of events. Synchronized timestamps aid in searching logs for errors and potential security breaches. Certain network services also rely on synchronized system clocks to verify security and other network tokens across the network. If the clocks are out of sync, many services may malfunction. Network Time Protocol (NTP) is a protocol for clock synchronization between computers on a network.
 
 <!--
  ```diff
